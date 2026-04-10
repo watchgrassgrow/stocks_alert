@@ -225,8 +225,8 @@ def render_table(data, title=None):
         return "color: #2d7a2d"
 
     styled = display.style \
-        .applymap(color_iv, subset=["IV Discount %"]) \
-        .applymap(color_trigger, subset=["Trigger"]) \
+        .map(color_iv, subset=["IV Discount %"]) \
+        .map(color_trigger, subset=["Trigger"]) \
         .format({
             "Price":       lambda x: f"${x:,.2f}" if pd.notna(x) else "—",
             "Support 1":   lambda x: f"${x:,.2f}" if pd.notna(x) else "—",
